@@ -1,79 +1,97 @@
 /* Reset some default styles */
-body, h1, h2, h3, p {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #161616; /* Set the background color to match the header or any color you prefer */
 }
 
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6; /* Adds a bit of space between lines of text */
+    padding-left: 200px; /* Space for the sidebar */
+    overflow-x: hidden;
+}
+
+/* Sidebar styles */
+#sidebar {
+    position: fixed; /* Fixed position */
+    left: 0;
+    top: 0;
+    width: 200px; /* Width of the sidebar */
+    height: 100%;
+    background-color: #161616; /* Sidebar background color */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding-top: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+#sidebar ul li a {
+    padding: 10px 15px;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the links fill the container */
+    color: white; /* Text color */
+}
+
+#sidebar ul li a:hover {
+    background-color: #333; /* Hover background color */
+    color: white; /* Hover text color */
 }
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%; /* Full width */
+    max-width: 960px; /* Maximum width */
+    margin: 0 auto; /* Centering the container */
+    padding: 0 20px; /* Padding on the sides */
 }
 
-header {
-    background-color: rgb(21, 20, 20);
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    text-align: center;
-}
-
-nav ul li {
-    margin-right: 25px;
-    text-align: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-
-section {
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* Portfolio item styles */
-.portfolio-item {
-    margin-top: 20px;
-}
-
-.portfolio-item img {
-    max-width: 100%;
-}
+/* ... other styles ... */
 
 /* Footer styles */
 footer {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 10px 0;
-    text-align: center;
+    position: relative; /* To ensure footer is positioned correctly */
+    z-index: 10; /* To ensure footer is above the sidebar */
 }
 
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
+    body {
+        padding-left: 100px; /* Smaller sidebar for small screens */
+    }
+
+    #sidebar {
+        width: 100px; /* Smaller sidebar for small screens */
+    }
+
+    #sidebar ul li a {
+        padding: 10px;
+    }
+
     nav ul {
         flex-direction: column;
-        text-align: center;
     }
 
     nav ul li {
         margin: 10px 0;
     }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Add space between text and surrounding elements */
+p {
+    margin-bottom: 20px; /* Adds space below paragraphs */
 }
